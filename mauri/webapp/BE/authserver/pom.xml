@@ -16,15 +16,8 @@
     <maven.compiler.target>1.11</maven.compiler.target>
     <jetty.version>9.4.28.v20200408</jetty.version>
     <guice.version>4.2.3</guice.version>
-  </properties>
-
-  <modules>
-    <module>api</module>
-    <module>application</module>
-    <module>domain</module>
-    <module>infra</module>
-    <module>server</module>
-  </modules>
+    <jersey.version>1.19.4</jersey.version>
+  </properties> 
 
   <dependencies>
     <dependency>
@@ -39,8 +32,38 @@
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
         <version>${guice.version}</version>
-    </dependency>    
+    </dependency>
+    <dependency>
+        <groupId>com.google.inject.extensions</groupId>
+        <artifactId>guice-servlet</artifactId>
+        <version>${guice.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>${jersey.version}</version>
+    </dependency> 
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-core</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>  
+
+    <!-- jaxrs.ws.rs-api
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>${jax.ws.rs.api.version}</version>
+    </dependency>-->
   </dependencies>
+
+  <modules>
+    <module>api</module>
+    <module>application</module>
+    <module>domain</module>
+    <module>infra</module>
+    <module>server</module>
+  </modules>
 
   <build>
     <pluginManagement>
